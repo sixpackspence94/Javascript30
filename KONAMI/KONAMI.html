@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Key Detection</title>
+        
+    </head>
+    <body>
+        <script>
+          const pressed = [];
+          const secretCode = 'spence';
+          
+          window.addEventListener('keyup', (e) => {
+              console.log(e.key);
+              pressed.push(e.key);
+              pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+              pressed.join('').includes(secretCode) ? console.log('You Won!') : console.log("nope");
+                  
+              
+                  console.log(pressed);
+          });
+
+
+        </script>
+    </body>
+</html>
